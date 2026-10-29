@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090c"><title>Last Signal</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Last Signal third-person survival game"></main>
+  <audio id="soundtrack" src="assets/audio/treachery.mp3" loop preload="auto"></audio>
+  <div id="hud" hidden>
+    <div class="clock"><span id="time">1:00</span><div class="clock-rule"></div><small id="shrink">10</small><div id="power-meter"><div class="power-track"><div id="power-fill"></div></div><span id="power-hint">POWER</span></div></div>
+    <button id="pause" type="button" aria-label="Pause">Ⅱ</button>
+    <button id="hud-sound" type="button" aria-label="Mute sound">♪</button>
+    <div class="vitals" aria-label="Lives remaining"><span class="hud-label">LIVES</span><div id="lives"><div class="life"><i></i><i></i><i></i></div><div class="life"><i></i><i></i><i></i></div></div></div>
+    <div class="ability"><span id="attack-label">PULSE</span><div class="track"><div id="attack-fill"></div></div><kbd>LEFT CLICK</kbd></div>
+    <div id="danger" hidden aria-label="Outside safe zone"><div class="track"><div id="danger-fill"></div></div></div>
+  </div>
+  <section id="overlay" aria-label="Main menu">
+    <div class="menu-card">
+      <h1 id="title">LAST<span>SIGNAL</span></h1>
+      <div class="title-rule"><span></span></div>
+      <p id="result" hidden></p>
+      <nav aria-label="Game menu"><button id="start" type="button" disabled>Loading</button><button id="controls-button" type="button">Controls</button><button id="sound-toggle" type="button">Sound: On</button><button id="exit" type="button">Exit</button></nav>
+      <p id="load-error" role="alert"></p>
+    </div>
+  </section>
+  <dialog id="controls-dialog"><h2>Controls</h2><dl><dt>Move</dt><dd>W A S D</dd><dt>Look</dt><dd>Mouse</dd><dt>Attack</dt><dd>Left click</dd><dt>Power up</dt><dd>Space</dd><dt>Pause</dt><dd>Esc</dd></dl><form method="dialog"><button>Back</button></form></dialog>
+  <div id="cinematic" hidden><div class="cinema-bar top"></div><p id="subtitle"></p><span class="skip-hint">ESC · SKIP</span><div class="cinema-bar bottom"></div></div>
+  <div id="scene-fade"></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
